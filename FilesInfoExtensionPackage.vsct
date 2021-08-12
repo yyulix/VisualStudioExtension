@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<Extern href="stdidcmd.h"/>
+
+	<Extern href="vsshlids.h"/>
+
+	<Commands package="guidFilesInfoExtensionPackage">
+		<Groups>
+			<Group guid="guidFilesInfoExtensionPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+			</Group>
+
+		</Groups>
+		<Buttons>
+			<Button guid="guidFilesInfoExtensionPackageCmdSet" id="CommandID" priority="0x0601" type="Button">
+				<Parent guid="guidFilesInfoExtensionPackageCmdSet" id="MyMenuGroup"/>
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>File info</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+		<Bitmaps>
+			<Bitmap guid="guidImages" href="Resources\eci.png" usedList="bmpPic1"/>
+		</Bitmaps>
+	</Commands>
+
+	<KeyBindings>
+		<KeyBinding guid="guidFilesInfoExtensionPackageCmdSet" id="CommandID" editor="guidVSStd97" key1="1" mod1="ALT" />
+	</KeyBindings>
+
+	<Symbols>
+		<GuidSymbol name="guidFilesInfoExtensionPackage" value="{71d32a92-2033-4afc-b243-e66c4e072692}" />
+		<GuidSymbol name="guidFilesInfoExtensionPackageCmdSet" value="{450f374b-57e8-48b3-a456-c326994a49e3}">
+			<IDSymbol name="FilesInfoExtensionWindowCommandId" value="0x0100" />
+			<IDSymbol name="CommandID" value="0x0601" />
+			<IDSymbol name="MyMenuGroup" value="0x0600" />
+		</GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{afc3bfa3-63ed-4030-a044-6832e85dcb24}" >
+			<IDSymbol name="bmpPic1" value="1" />
+			
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>

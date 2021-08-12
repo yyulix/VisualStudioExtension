@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="FilesInfoExtension.FilesInfoExtensionWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MyToolWindow">
+    <Grid>
+        <ScrollViewer Width="Auto" HorizontalAlignment="Stretch">
+            <StackPanel Width="Auto" HorizontalAlignment="Stretch">
+                <Button Content="Update!" Click="RefreshButton_OnClick" Height="30" Name="RefreshButton" HorizontalContentAlignment="Center" Background="#FF00AEFF" BorderThickness="0" BorderBrush="White" Foreground="White" FontFamily="Segoe UI Historic" FontSize="14"/>
+                <ListView Name="StatisticsListView" TextBlock.Foreground="Black" FontWeight="Light" Width="Auto"
+                          SizeChanged="StatisticsListView_SizeChanged" Loaded="StatisticsListView_Loaded" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="0" FontFamily="Segoe UI Historic">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding= "{Binding functionName}"
+                                            Header="Name"
+                                            Width="Auto"/>
+                            <GridViewColumn DisplayMemberBinding= "{Binding amountOfLines}"
+                                Header="Lines"
+                                Width="Auto"/>
+                            <GridViewColumn DisplayMemberBinding= "{Binding amountOfPayloadLines}"
+                                Header="Payload Lines"
+                                Width="Auto"/>
+                            <GridViewColumn DisplayMemberBinding= "{Binding amountOfKeywords}"
+                                Header="Keywords"
+                                Width="Auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
